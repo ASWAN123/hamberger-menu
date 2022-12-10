@@ -1,0 +1,105 @@
+body{
+    background-color: #f4f4f4;
+}
+
+.navbar{
+    background-color:#f4f4f4; ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 50px;
+}
+
+
+
+.brand-name{
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.nav-item{
+    list-style: none;
+}
+
+
+.bar{
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: green;
+    margin: 5px auto;
+}
+
+.humberger{ 
+    display: none ; 
+    cursor: pointer ;   
+}
+
+
+@media (max-width: 500px) {
+    .humberger{
+        display: block;
+    }
+    /* button transform */
+    .humberger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .humberger.active .bar:nth-child(1){
+       transform: translateY(8px) rotate(45deg);
+    }
+
+    .humberger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* menu transform */
+    .nav-menu{
+        display: none;
+    }
+
+
+    .navbar.active{
+        background-color: rgb(211, 208, 205);
+    }
+
+    body.active{
+        background-color: rgb(211, 208, 205);
+    }
+
+    .nav-menu.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        padding: 10px 20px;
+        top: -3%;
+        right:-1% ;
+        height: 100vh;
+        width: 50%;
+        transition: 0.3s;
+        background-color: rgb(63, 60, 60);
+    }
+
+    .nav-menu.active .nav-item{
+        padding: 10px ;
+        color: white ;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .humberger.active span{
+        background-color: white;
+    }
+
+}
